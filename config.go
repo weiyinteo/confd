@@ -176,6 +176,13 @@ func initConfig() error {
 			} else {
 				config.BackendNodes = []string{"http://127.0.0.1:4001"}
 			}
+		case "etcd3":
+			peerstr := os.Getenv("ETCDCTL_PEERS")
+			if len(peerstr) > 0 {
+				config.BackendNodes = strings.Split(peerstr, ",")
+			} else {
+				config.BackendNodes = []string{"http://127.0.0.1:2379"}
+			}
 		case "redis":
 			config.BackendNodes = []string{"127.0.0.1:6379"}
 		case "vault":
