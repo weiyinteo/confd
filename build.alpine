@@ -6,4 +6,6 @@ apk --update add go bash musl-dev
 export GOPATH=/go
 
 mkdir -p bin
-go build -o bin/confd .
+
+# ensure static link without debug info and symbols
+CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags="-w -s" -o bin/confd -v .
