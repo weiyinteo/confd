@@ -1,0 +1,98 @@
+package: github.com/kelseyhightower/confd
+import:
+- package: github.com/BurntSushi/toml
+  version: 312db06c6c6dbfa9899e58564bacfaa584f18ab7
+- package: github.com/Sirupsen/logrus
+  version: 3455d89ac9652295c85db2a98ea32f1d61c380bc
+- package: github.com/aws/aws-sdk-go
+  version: 2a34ea8812f32aae75b43400f9424a0559840659
+  subpackages:
+  - aws
+  - aws/awserr
+  - aws/awsutil
+  - aws/client
+  - aws/client/metadata
+  - aws/corehandlers
+  - aws/credentials
+  - aws/credentials/ec2rolecreds
+  - aws/defaults
+  - aws/ec2metadata
+  - aws/request
+  - aws/session
+  - private/endpoints
+  - private/protocol/json/jsonutil
+  - private/protocol/jsonrpc
+  - private/protocol/rest
+  - private/signer/v4
+  - private/waiter
+  - service/dynamodb
+- package: github.com/fatih/structs
+  version: a924a2250d1033753512e95dce41dca3fd793ad9
+- package: github.com/garyburd/redigo
+  version: 836b6e58b3358112c8291565d01c35b8764070d7
+  subpackages:
+  - internal
+  - redis
+- package: github.com/go-ini/ini
+  version: ^1.9.0
+- package: github.com/hashicorp/consul
+  version: 09e60af97c5512ed57980931b314658611254ce0
+  subpackages:
+  - api
+- package: github.com/hashicorp/go-cleanhttp
+  version: 875fb671b3ddc66f8e2f0acc33829c8cb989a38d
+- package: github.com/hashicorp/hcl
+  version: 1c284ec98f4b398443cbabb0d9197f7f4cc0077c
+- package: github.com/hashicorp/serf
+  version: c4c55f16bae1aed9b355ad655d3ebf0215734461
+  subpackages:
+  - coordinate
+- package: github.com/hashicorp/vault
+  version: 35d2976caefdd7b3a26c4d8720880d8344fd60c6
+  subpackages:
+  - api
+- package: github.com/jmespath/go-jmespath
+  version: 0b12d6b521d83fc7f755e7cfc1b1fbdd35a01a74
+- package: github.com/kelseyhightower/memkv
+  version: 71620c547230ad53777a00e2ebd3bbab8353370e
+- package: github.com/mitchellh/mapstructure
+  version: d2dd0262208475919e1a362f675cfc0e7c10e905
+- package: github.com/samuel/go-zookeeper
+  version: 218e9c81c0dd8b3b18172b2bbfad92cc7d6db55f
+  subpackages:
+  - zk
+- package: golang.org/x/net
+  version: f2499483f923065a842d38eb4c7f1927e6fc6e6d
+  subpackages:
+  - context
+  - http2
+  - http2/hpack
+  - internal/timeseries
+  - trace
+- package: golang.org/x/sys
+  version: 20457ee8ea8546920d3f4e19e405da45250dc5a5
+  subpackages:
+  - unix
+- package: github.com/coreos/etcd
+  version: ^3.1.0
+  subpackages:
+  - auth
+  - clientv3
+  - client
+  - mvcc
+- package: github.com/golang/protobuf
+  version: 4bd1920723d7b7c925de087aa32e2187708897f7
+  subpackages:
+  - jsonpb
+  - proto
+- package: google.golang.org/grpc
+  version: v1.0.4
+  subpackages:
+  - codes
+  - credentials
+  - grpclog
+  - internal
+  - metadata
+  - naming
+  - peer
+  - transport

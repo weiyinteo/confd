@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+echo "Building confd..."
+apk --update add go bash musl-dev
+
+export GOPATH=/go
+
+mkdir -p bin
+go build -o bin/confd .
