@@ -119,14 +119,13 @@ func (c *Client) WatchPrefix(prefix string, keys []string, waitIndex uint64, sto
 
 		for resp := range ch {
 			for _, e := range resp.Events {
-				if e.Type == mvccpb.PUT {
+				if e.Type == mvccpb.PUT || e.Type == mvccpb.DELETE {
 					for _, k := range keys {
 						kvk := string(e.Kv.Key)
 						if strings.HasPrefix(kvk, k) {
 							return uint64(e.Kv.ModRevision), nil
 						}
 					}
-
 				}
 
 			}
