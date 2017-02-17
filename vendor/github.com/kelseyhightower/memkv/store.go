@@ -201,9 +201,9 @@ func pathToTerms(filePath string) []string {
 }
 
 func samePrefixTerms(left, right []string) bool {
-	l := len(left)
-	if len(left) > len(right) {
-		l = len(right)
+	l := len(right)
+	if len(left) < l {
+		return false
 	}
 	for i := 0; i < l; i++ {
 		if left[i] != right[i] {
