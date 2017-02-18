@@ -22,7 +22,7 @@ func NewEtcdClient(machines []string, cert, key, caCert string, basicAuth bool, 
 	var cfgtls *transport.TLSInfo
 	tlsinfo := transport.TLSInfo{}
 	if cert != "" {
-		tlsinfo.CertFile = caCert
+		tlsinfo.CertFile = cert
 		cfgtls = &tlsinfo
 	}
 
@@ -61,7 +61,7 @@ func NewEtcdClient(machines []string, cert, key, caCert string, basicAuth bool, 
 
 	c, err := clientv3.New(cfg)
 	if err != nil {
-		return &Client{*c}, err
+		return &Client{}, err
 	}
 
 	return &Client{*c}, nil
