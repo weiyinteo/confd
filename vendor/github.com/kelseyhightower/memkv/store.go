@@ -165,7 +165,7 @@ func (s Store) ListDir(filePath string) []string {
 	for _, kv := range s.m {
 		if strings.HasPrefix(kv.Key, filePath) {
 			items := pathToTerms(path.Dir(kv.Key))
-			if samePrefixTerms(prefix, items) && (len(items)-len(prefix) >= 1) {
+			if samePrefixTerms(items, prefix) && (len(items)-len(prefix) >= 1) {
 				m[items[len(prefix):][0]] = true
 			}
 		}
@@ -200,13 +200,13 @@ func pathToTerms(filePath string) []string {
 	return strings.Split(path.Clean(filePath), "/")
 }
 
-func samePrefixTerms(left, right []string) bool {
-	l := len(right)
-	if len(left) < l {
+func samePrefixTerms(target, prefix []string) bool {
+	l := len(prefix)
+	if len(target) < l {
 		return false
 	}
 	for i := 0; i < l; i++ {
-		if left[i] != right[i] {
+		if target[i] != prefix[i] {
 			return false
 		}
 	}
